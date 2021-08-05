@@ -14,7 +14,6 @@ libgudev-1.0.so.0
 libmount.so.1
 libpolkit-agent-1.so.0
 libpolkit-gobject-1.so.0
-libpthread.so.0
 libstoragemgmt.so.1
 libsystemd.so.0
 libuuid.so.1
