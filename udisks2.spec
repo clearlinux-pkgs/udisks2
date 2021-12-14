@@ -4,7 +4,7 @@
 #
 Name     : udisks2
 Version  : 2.9.4
-Release  : 20
+Release  : 21
 URL      : https://github.com/storaged-project/udisks/releases/download/udisks-2.9.4/udisks-2.9.4.tar.bz2
 Source0  : https://github.com/storaged-project/udisks/releases/download/udisks-2.9.4/udisks-2.9.4.tar.bz2
 Summary  : UDisks Client Library
@@ -33,13 +33,8 @@ BuildRequires : gnome-common-dev
 BuildRequires : gobject-introspection-dev
 BuildRequires : gtk-doc
 BuildRequires : gtk-doc-dev
-BuildRequires : libatasmart
-BuildRequires : libblockdev
-BuildRequires : libbytesize
 BuildRequires : libconfig-dev
-BuildRequires : libiscsi
 BuildRequires : libiscsi-dev
-BuildRequires : libstoragemgmt
 BuildRequires : libstoragemgmt-dev
 BuildRequires : libxslt-bin
 BuildRequires : perl(XML::Parser)
@@ -176,7 +171,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1632940773
+export SOURCE_DATE_EPOCH=1639500437
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
@@ -198,7 +193,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1632940773
+export SOURCE_DATE_EPOCH=1639500437
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/udisks2
 cp %{_builddir}/udisks-2.9.4/COPYING %{buildroot}/usr/share/package-licenses/udisks2/83b927c3fa44af01d2515ea8575f8d4848cc10ec
