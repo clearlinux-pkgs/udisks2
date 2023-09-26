@@ -4,10 +4,10 @@
 # Using build pattern: configure
 #
 Name     : udisks2
-Version  : 2.10.0
-Release  : 22
-URL      : https://github.com/storaged-project/udisks/releases/download/udisks-2.10.0/udisks-2.10.0.tar.bz2
-Source0  : https://github.com/storaged-project/udisks/releases/download/udisks-2.10.0/udisks-2.10.0.tar.bz2
+Version  : 2.10.1
+Release  : 23
+URL      : https://github.com/storaged-project/udisks/releases/download/udisks-2.10.1/udisks-2.10.1.tar.bz2
+Source0  : https://github.com/storaged-project/udisks/releases/download/udisks-2.10.1/udisks-2.10.1.tar.bz2
 Summary  : UDisks Client Library
 Group    : Development/Tools
 License  : GPL-2.0
@@ -169,11 +169,11 @@ services components for the udisks2 package.
 
 
 %prep
-%setup -q -n udisks-2.10.0
-cd %{_builddir}/udisks-2.10.0
+%setup -q -n udisks-2.10.1
+cd %{_builddir}/udisks-2.10.1
 %patch -P 1 -p1
 pushd ..
-cp -a udisks-2.10.0 buildavx2
+cp -a udisks-2.10.1 buildavx2
 popd
 
 %build
@@ -181,7 +181,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1687981260
+export SOURCE_DATE_EPOCH=1695771198
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export FCFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
@@ -220,7 +220,7 @@ cd ../buildavx2;
 make %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1687981260
+export SOURCE_DATE_EPOCH=1695771198
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/udisks2
 cp %{_builddir}/udisks-%{version}/COPYING %{buildroot}/usr/share/package-licenses/udisks2/83b927c3fa44af01d2515ea8575f8d4848cc10ec || :
@@ -301,6 +301,7 @@ install -D udisks/udisks2.conf %{buildroot}/usr/share/defaults/udisks2/udisks2.c
 /usr/share/gtk-doc/html/udisks2/UDisksEncrypted.html
 /usr/share/gtk-doc/html/udisks2/UDisksFilesystem.html
 /usr/share/gtk-doc/html/udisks2/UDisksFstabEntry.html
+/usr/share/gtk-doc/html/udisks2/UDisksISCSISession.html
 /usr/share/gtk-doc/html/udisks2/UDisksJob.html
 /usr/share/gtk-doc/html/udisks2/UDisksLinuxBlock.html
 /usr/share/gtk-doc/html/udisks2/UDisksLinuxBlockObject.html
@@ -324,6 +325,7 @@ install -D udisks/udisks2.conf %{buildroot}/usr/share/defaults/udisks2/udisks2.c
 /usr/share/gtk-doc/html/udisks2/UDisksLoop.html
 /usr/share/gtk-doc/html/udisks2/UDisksMDRaid.html
 /usr/share/gtk-doc/html/udisks2/UDisksManager.html
+/usr/share/gtk-doc/html/udisks2/UDisksManagerISCSIInitiator.html
 /usr/share/gtk-doc/html/udisks2/UDisksManagerLVM2.html
 /usr/share/gtk-doc/html/udisks2/UDisksManagerNVMe.html
 /usr/share/gtk-doc/html/udisks2/UDisksMountMonitor.html
@@ -412,11 +414,9 @@ install -D udisks/udisks2.conf %{buildroot}/usr/share/defaults/udisks2/udisks2.c
 /usr/share/gtk-doc/html/udisks2/udisks2-Logging.html
 /usr/share/gtk-doc/html/udisks2/udisks2-UDisksError.html
 /usr/share/gtk-doc/html/udisks2/udisks2-UDisksFilesystemBTRFS.html
-/usr/share/gtk-doc/html/udisks2/udisks2-UDisksISCSISession.html
 /usr/share/gtk-doc/html/udisks2/udisks2-UDisksLinuxManagerNVMe.html
 /usr/share/gtk-doc/html/udisks2/udisks2-UDisksLinuxNVMeFabrics.html
 /usr/share/gtk-doc/html/udisks2/udisks2-UDisksManagerBTRFS.html
-/usr/share/gtk-doc/html/udisks2/udisks2-UDisksManagerISCSIInitiator.html
 /usr/share/gtk-doc/html/udisks2/udisks2-UDisksModule.html
 /usr/share/gtk-doc/html/udisks2/udisks2-UDisksModuleManager.html
 /usr/share/gtk-doc/html/udisks2/udisks2-UDisksUtabMonitor.html
